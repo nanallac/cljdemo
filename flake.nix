@@ -54,7 +54,7 @@
 	};
       });
 
-    nixosModule = forAllSystems (system:
+    nixosModules.default = forAllSystems (system:
       let
         pkgs = nixPkgsFor.${system};
       in
