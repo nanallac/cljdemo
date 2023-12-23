@@ -54,7 +54,7 @@
 	};
       });
 
-    nixosModules.default = { config, lib, pkgs }:
+    nixosModules.default = { config, lib, pkgs, ... }:
         with lib;
 	let
 	  cfg = config.cljdemo.services.cljdemo;
