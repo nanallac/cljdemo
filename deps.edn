@@ -1,0 +1,6 @@
+{:deps
+  {org.clojure/clojure {:mvn/version "1.11.1"}
+   ring/ring-core {:mvn/version "1.11.0-RC2"}
+   ring/ring-jetty-adapter {:mvn/version "1.11.0-RC2"}}
+ :paths ["src"]
+}
