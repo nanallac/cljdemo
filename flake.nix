@@ -54,18 +54,12 @@
 	};
       });
 
-    nixosModules.default = forAllSystems (system:
-      let
-        pkgs = nixPkgsFor.${system};
-      in
-      { config
-      , lib
-      , pkgs
-      }:
-        with lib; let
-	  cfg = config.services.cljdemo;
+    nixosModules.default = { config, lib, pkgs }:
+        with lib;
+	let
+	  cfg = config.cljdemo.services.cljdemo;
 	in {
-        options.services.cljdemo = {
+        options.cljdemo.services.cljdemo = {
 	  enable = mkEnableOption "enable the cljdemo service";
 	  
 	  # package = mkOption {
@@ -95,7 +89,7 @@
 	    };
 	  };
 	};
-      });
+      };
 
     devShells = forAllSystems (system:
       let
