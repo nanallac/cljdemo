@@ -58,15 +58,16 @@
         with lib;
 	let
 	  cfg = config.cljdemo.services.cljdemo;
-	in {
+	in
+	{
         options.cljdemo.services.cljdemo = {
 	  enable = mkEnableOption "enable the cljdemo service";
 	  
-	  # package = mkOption {
-	  #   type = types.package;
-	  #   default = self.packages.${system}.cljdemo;
-	  #   description = "cljdemo package to use";
-	  # };
+	  package = mkOption {
+	    type = types.package;
+	    default = self.packages.${pkgs.system}.default;
+	    description = "cljdemo package to use";
+	  };
 	  
 	  # port = mkOption {
 	  #   type = types.port;
