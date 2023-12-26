@@ -3,3 +3,4 @@
 .lsp/
 .direnv/
 result*
+*.qcow2
